@@ -22,7 +22,13 @@ class RedisHttpStoreTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->store = new RedisHttpStore(array('host' => 'localhost'), 'hdr', 'ldr', 'mdr');
+        $this->store = new RedisHttpStore(
+            array('host' => 'localhost'),
+            array('default_ttl' => 60),
+            'hdr',
+            'ldr',
+            'mdr'
+        );
 
         $this->request = Request::create('/');
 
