@@ -16,8 +16,8 @@ class HttpRedisCache extends HttpCache
 {
     public function createStore()
     {
-        return new RedisHttpStore($this->getConnectionParams(), $this->getDigestKeyPrefix(), $this->getLockKey(
-        ), $this->getMetadataKeyPrefix());
+        return new RedisHttpStore($this->getConnectionParams(), $this->getOptions(), $this->getDigestKeyPrefix(
+        ), $this->getLockKey(), $this->getMetadataKeyPrefix());
     }
 
     public function getConnectionParams()
